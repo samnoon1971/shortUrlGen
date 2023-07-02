@@ -6,6 +6,8 @@ function App() {
   const [copyBtn, setCopyBtn] = useState('Copy');
   const [url, setUrl] = useState('');
   const [shortenedUrl, setShortenedUrl] = useState('');
+  const year = new Date().getFullYear();
+
   const handleInput = (input) => {
     if("Copy" != copyBtn) {
       setCopyBtn("Copy");
@@ -49,6 +51,7 @@ function App() {
               </div>
            }
         </div>
+        <footer>{`Copyright © S M Samnoon Abrar ${year}`}</footer>
       </div>
     </>
   )

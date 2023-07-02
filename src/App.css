@@ -53,3 +53,12 @@
 .shortener__viewShot button:hover {
   color: rgb(64, 64, 66);
 }
+footer {
+  position: fixed;
+  background-color: gray;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 8px;
+  text-align: center;
+}
