@@ -1,0 +1,78 @@
+$shortener-color-orig: rgb(95, 180, 245);
+
+#root {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.shortener {
+    width: fit-content;
+    margin: 0 auto;
+    text-align: center;
+    display: block;
+
+    input,
+    button {
+        min-height: 40px;
+        padding: 0 10px;
+        margin: 10px;
+    }
+
+    input {
+        border: 1px solid gray;
+        color: rgb(255, 255, 255);
+
+        :focus {
+            border: 1px solid $shortener-color-orig;
+            outline: none;
+        }
+    }
+
+    form {
+        >button {
+            background-color: $shortener-color-orig;
+            border: 2px solid lavender;
+            color: white;
+
+            :hover {
+                background-color: rgb(51, 162, 246);
+            }
+        }
+    }
+}
+
+.shortener__viewShot {
+    margin-top: 20px;
+    border: 1px solid gainsboro;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 10px;
+    color: rgb(250, 250, 250);
+    align-items: center;
+
+    button {
+        background-color: transparent;
+        border: none;
+        color: gray;
+
+        :hover {
+            color: rgb(64, 64, 66);
+        }
+    }
+}
+
+footer {
+    position: fixed;
+    background-color: gray;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 8px;
+    text-align: center;
+}

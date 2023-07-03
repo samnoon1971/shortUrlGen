@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './App.css';
+import './App.scss';
 import axios from 'axios';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 function App() {
