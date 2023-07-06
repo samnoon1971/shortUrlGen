@@ -23,7 +23,11 @@ docker build -t short_url_gen:0.1.0 .
 ```
 docker run --rm -it --network host short_url_gen:0.1.0
 ```
+Open browser on host ip with Port `5173` like following:
 
+```
+http://127.0.0.1:5173/
+```
 ## Contributing
 
 Contributions are always welcome!
@@ -31,8 +35,6 @@ Contributions are always welcome!
 See `contributing.md` for ways to get started.
 
 Please adhere to this project's `code of conduct`.
-
-
 
 
 ## Support
