@@ -31,7 +31,7 @@ function App() {
     setAlert(true);
     setAlertSeverity("error");
     if (url.length === 0) {
-      setAlertContent("Please enter a URL");
+      setAlertContent("Please enter a valid URL");
     }
     else {
       setAlertContent("Requested URL Could not be processed");
