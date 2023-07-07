@@ -18,7 +18,7 @@ function App() {
       setCopyBtn("Copy");
     }
     setCopyBtn("Copied");
-   
+
     setUrl(input);
   }
   const clipBoard = () => {
@@ -30,8 +30,12 @@ function App() {
   const handleErrors = (error) => {
     setAlert(true);
     setAlertSeverity("error");
-    setAlertContent("Requested URL Could not be processed");
-  
+    if (url.length === 0) {
+      setAlertContent("Please enter a URL");
+    }
+    else {
+      setAlertContent("Requested URL Could not be processed");
+    }
   }
   const handleRespone = (res) => {
     setAlert(true);
@@ -41,6 +45,7 @@ function App() {
   }
   const shortenUrl = (e) => {
     e.preventDefault();
+    setShortenedUrl("");
     axios.get(`https://api.shrtco.de/v2/shorten?url=${url}`)
       .then(res => handleRespone(res))
       .catch(error => handleErrors(error));
