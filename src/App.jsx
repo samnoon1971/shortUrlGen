@@ -19,11 +19,14 @@ function App() {
     alert("Copied to clipboard!");
 
   }
+  const handleErrors = (error) => {
+    alert("Requested URL Could not be processed.")
+  }
   const shortenUrl = (e) => {
     e.preventDefault();
     axios.get(`https://api.shrtco.de/v2/shorten?url=${url}`)
     .then(res => setShortenedUrl(res.data.result.full_short_link))
-    .catch(error => console.log(error));
+    .catch(error => handleErrors(error));
     if("Copy" != copyBtn) {
       setCopyBtn("Copy");
     }
