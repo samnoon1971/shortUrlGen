@@ -26,7 +26,7 @@ $shortener-color-orig: rgb(95, 180, 245);
 
     input {
         border: 1px solid gray;
-        color: rgb(255, 255, 255);
+        color: black;
 
         :focus {
             border: 1px solid $shortener-color-orig;
