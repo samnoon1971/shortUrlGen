@@ -27,15 +27,25 @@ function App() {
     setAlertSeverity("success");
     setAlertContent("Copied to clipboard");
   }
-  const handleErrors = (error) => {
+  const handleErrors = (error_code) => {
     setAlert(true);
     setAlertSeverity("error");
-    if (url.length === 0) {
-      setAlertContent("Please enter a valid URL");
+    if (error_code == 1) {
+      setAlertContent("URL is empty. Please enter a valid URL");
+    }
+    else if (error_code == 2) {
+      setAlertContent("Invalid URL Submitted. Please enter a valid URL.")
+    }
+    else if (error_code == 3) {
+      setAlertContent("Wait a second and try again. Sorry for the inconvenience.")
+    }
+    else if (error_code > 3 || error_code < 10) {
+      setAlertContent("Couldn't process the URL. Try again later")
     }
     else {
-      setAlertContent("Requested URL Could not be processed");
+      setAlertContent("Couldn't process the URL, something went wrong");
     }
+
   }
   const handleRespone = (res) => {
     setAlert(true);
@@ -48,7 +58,7 @@ function App() {
     setShortenedUrl("");
     axios.get(`https://api.shrtco.de/v2/shorten?url=${url}`)
       .then(res => handleRespone(res))
-      .catch(error => handleErrors(error));
+      .catch(error => handleErrors(error.response.data.error_code));
     if ("Copy" != copyBtn) {
       setCopyBtn("Copy");
     }
